@@ -1,0 +1,45 @@
+{
+  "name": "simple-post-x",
+  "version": "0.1.0",
+  "description": "Screenshot capture, annotation, styling and mockups with MCP support",
+  "main": "./out/main/index.js",
+  "author": "Simple Post X",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build && npm run build:mcp",
+    "build:mcp": "esbuild src/mcp/server.ts --bundle --platform=node --target=node20 --outfile=resources/mcp-server.js --external:sharp --external:@modelcontextprotocol/sdk",
+    "preview": "electron-vite preview",
+    "package": "npm run build && electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.1",
+    "konva": "^9.3.20",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-konva": "^18.2.10",
+    "sharp": "^0.33.5",
+    "use-image": "^1.1.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@electron-toolkit/eslint-config-ts": "^3.0.0",
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/tsconfig": "^2.0.0",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@types/node": "^22.10.7",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "esbuild": "^0.27.4",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.0"
+  }
+}

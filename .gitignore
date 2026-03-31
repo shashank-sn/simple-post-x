@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+out/
+dist/
+release/
+
+# macOS
+.DS_Store
+*.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Editor
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
